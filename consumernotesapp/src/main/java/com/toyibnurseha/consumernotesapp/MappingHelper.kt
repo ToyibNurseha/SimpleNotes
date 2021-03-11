@@ -1,8 +1,8 @@
-package com.toyibnurseha.simplenotesapp
+package com.toyibnurseha.consumernotesapp
 
 import android.database.Cursor
-import com.toyibnurseha.simplenotesapp.db.DatabaseContract
-import com.toyibnurseha.simplenotesapp.entity.Note
+import com.toyibnurseha.consumernotesapp.db.DatabaseContract
+import com.toyibnurseha.consumernotesapp.entity.Note
 
 object MappingHelper {
 

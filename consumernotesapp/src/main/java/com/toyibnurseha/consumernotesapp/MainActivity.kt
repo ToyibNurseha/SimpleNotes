@@ -1,4 +1,4 @@
-package com.toyibnurseha.simplenotesapp
+package com.toyibnurseha.consumernotesapp
 
 import android.content.Intent
 import android.database.ContentObserver
@@ -9,10 +9,9 @@ import android.os.HandlerThread
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
-import com.toyibnurseha.simplenotesapp.databinding.ActivityMainBinding
-import com.toyibnurseha.simplenotesapp.db.DatabaseContract.NoteColumns.Companion.CONTENT_URI
-import com.toyibnurseha.simplenotesapp.db.NoteHelper
-import com.toyibnurseha.simplenotesapp.entity.Note
+import com.toyibnurseha.consumernotesapp.databinding.ActivityMainBinding
+import com.toyibnurseha.consumernotesapp.db.DatabaseContract.NoteColumns.Companion.CONTENT_URI
+import com.toyibnurseha.consumernotesapp.entity.Note
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
@@ -33,17 +32,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.title = "Notes"
+        supportActionBar?.title = "Notes Consumer"
 
         binding.rvNotes.layoutManager = LinearLayoutManager(this)
         binding.rvNotes.setHasFixedSize(true)
         adapter = NoteAdapter(this)
         binding.rvNotes.adapter = adapter
 
-        binding.fabAdd.setOnClickListener {
-            val intent = Intent(this, NoteAddUpdateActivity::class.java)
-            startActivity(intent)
-        }
 
         val handlerThread = HandlerThread("DataObserver")
         handlerThread.start()

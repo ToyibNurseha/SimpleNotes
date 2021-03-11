@@ -1,4 +1,4 @@
-package com.toyibnurseha.simplenotesapp.db
+package com.toyibnurseha.consumernotesapp.db
 
 import android.net.Uri
 import android.provider.BaseColumns

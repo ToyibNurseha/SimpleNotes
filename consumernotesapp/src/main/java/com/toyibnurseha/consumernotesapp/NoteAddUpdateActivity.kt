@@ -1,4 +1,4 @@
-package com.toyibnurseha.simplenotesapp
+package com.toyibnurseha.consumernotesapp
 
 import android.content.ContentValues
 import android.content.Intent
@@ -9,12 +9,11 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.toyibnurseha.simplenotesapp.databinding.ActivityNoteAddUpdateBinding
-import com.toyibnurseha.simplenotesapp.db.DatabaseContract
-import com.toyibnurseha.simplenotesapp.db.DatabaseContract.NoteColumns.Companion.CONTENT_URI
-import com.toyibnurseha.simplenotesapp.db.DatabaseContract.NoteColumns.Companion.DATE
-import com.toyibnurseha.simplenotesapp.db.NoteHelper
-import com.toyibnurseha.simplenotesapp.entity.Note
+import com.toyibnurseha.consumernotesapp.databinding.ActivityNoteAddUpdateBinding
+import com.toyibnurseha.consumernotesapp.db.DatabaseContract
+import com.toyibnurseha.consumernotesapp.db.DatabaseContract.NoteColumns.Companion.CONTENT_URI
+import com.toyibnurseha.consumernotesapp.db.DatabaseContract.NoteColumns.Companion.DATE
+import com.toyibnurseha.consumernotesapp.entity.Note
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -30,7 +29,6 @@ class NoteAddUpdateActivity : AppCompatActivity() {
     private var isEdit = false
     private var note: Note? = null
     private var position = 0
-    private lateinit var noteHelper: NoteHelper
     private lateinit var binding: ActivityNoteAddUpdateBinding
     private lateinit var uriWithId: Uri
 
@@ -42,8 +40,8 @@ class NoteAddUpdateActivity : AppCompatActivity() {
         val actionBarTitle: String
         val btnTitle: String
 
-        noteHelper = NoteHelper.getInstance(applicationContext)
-        noteHelper.open()
+//        noteHelper = NoteHelper.getInstance(applicationContext)
+//        noteHelper.open()
 
         note = intent.getParcelableExtra(EXTRA_NOTE)
 

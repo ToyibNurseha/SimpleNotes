@@ -1,4 +1,4 @@
-package com.toyibnurseha.simplenotesapp
+package com.toyibnurseha.consumernotesapp
 
 import android.app.Activity
 import android.content.Intent
@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.toyibnurseha.simplenotesapp.databinding.RowItemNoteBinding
-import com.toyibnurseha.simplenotesapp.entity.Note
+import com.toyibnurseha.consumernotesapp.databinding.RowItemNoteBinding
+import com.toyibnurseha.consumernotesapp.entity.Note
 
 class NoteAdapter(private val activity: Activity) : RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
 
